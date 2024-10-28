@@ -10,12 +10,8 @@ const cors = require('cors'); // Import cors
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Use cors middleware
-app.use(cors({
-  origin: "http://localhost:3000", // Allow requests from this origin
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Allow these HTTP methods
-  allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept" // Allow these headers
-}));
+// Use cors middleware to allow requests from all origins
+app.use(cors()); // Allows all origins by default
 
 app.use(express.json());
 
